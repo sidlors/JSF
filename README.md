@@ -1,6 +1,9 @@
-# JSF Varios Ejemplos de JSF
+##JSF 2.0
+###Ejemplos de JSF
 
-1.- Un bean Java o JSF Manged Bean, con una propiedad de nombre para un _scope_ con los datos de usuario. En JSF el bean es gestionado; esto significa que una clase Java se puede acceder desde una página JSF.
+
+
+Un bean Java o JSF Manged Bean, con una propiedad de nombre para un _scope_ con los datos de usuario. En JSF el bean es gestionado; esto significa que una clase Java se puede acceder desde una página JSF.
 
 En JSF 2.0, se utiliza la anotación @ManagedBean para indicar que este es un managed bean, HelloBean.java
 
@@ -11,11 +14,12 @@ En 1.x JSF, había que declarar los beans en el faces-config.xml, pero esto ya no
 
 Para utilizar los componentes JSF 2.0 o características, se declara el espacio de nombres de JSF en la parte superior de la página.
 
-<code>
+```html
+
      <html xmlns="http://www.w3.org/1999/xhtml"
            xmlns:f="http://java.sun.com/jsf/core"      
            xmlns:h="http://java.sun.com/jsf/html">
-</code>
+```
 
 El archivo: hello.xhtml - Renderiza un cuadro de texto JSF y vincularlo con el "helloBean" (JSF managed bean), con la propiedad "name", y también un botón para mostrar la página "welcome.xhtml" cuando se hace clic.
 
@@ -31,16 +35,28 @@ de identificación mediante el método getName().
 
 Por ultimo
 
-Definir un mapeo "javax.faces.webapp.FacesServlet", y asignar a esas extensiones de archivo JSF conocidos (/ caras / *, * .jsf, * .xhtml, *. faces).
+Definir un mapeo "javax.faces.webapp.FacesServlet", y asignar a esas extensiones de archivo JSF conocidos (/faces /*, *.jsf, *.xhtml, *.faces).
 
 En este caso, los siguientes 4 URLs apuntan a la misma hello.xhtml.
 
 http://localhost:8080/JavaServerFaces/hello.jsf
+
 http://localhost:8080/JavaServerFaces/hello.faces
+
 http://localhost:8080/JavaServerFaces/hello.xhtml
+
 http://localhost:8080/JavaServerFaces/faces/hello.jsf
+
 
 En JSF desarrollo 2.0, se recomienda establecer el "javax.faces.PROJECT_STAGE" para "el desarrollo", que proporcionará mucha información de depuración útil para que pueda realizar un seguimiento de 
 los errores fácilmente. 
 
 Para la implementación, simplemente cambiarlo a "Producción", que simplemente no quiere que su cliente se vea en esta información de depuración molesto :).
+
+###Soporte de AJAX
+
+En JSF 2.0, la codificación Ajax es igual que la codificación de una etiqueta HTML normales, es muy fácil. 
+Reestructurar el último ejemplo hola mundo JSF 2.0, de modo que, cuando se pulsa el botón, se hará una petición Ajax en lugar de presentar todo el formulario.
+1. JSF 2.0 página 2.0 xhtml Página A JSF con soporte Ajax.
+
+```
