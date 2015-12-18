@@ -2,17 +2,12 @@
 ###Ejemplos de JSF
 
 
-
-Un bean Java o JSF Manged Bean, con una propiedad de nombre para un _scope_ con los datos de usuario. En JSF el bean es gestionado; esto significa que una clase Java se puede acceder desde una página JSF.
-
 En JSF 2.0, se utiliza la anotación @ManagedBean para indicar que este es un managed bean, HelloBean.java
 
 
 **Nota**
 
-En 1.x JSF, había que declarar los beans en el faces-config.xml, pero esto ya no es necesario en JSF 2.0.
-
-Para utilizar los componentes JSF 2.0 o características, se declara el espacio de nombres de JSF en la parte superior de la página.
+En 1.x JSF, había que declarar los beans en el faces-config.xml, pero esto ya no es necesario en JSF 2.0. Para utilizar los componentes JSF 2.0 o características, se declara el espacio de nombres de JSF en la parte superior de la página.
 
 ```html
 
@@ -33,9 +28,7 @@ El # {...} indica que este es un lenguaje de expresión JSF, en este caso, #{hell
 presentado a través del método setName(). Cuando welcome.xhtml pagina esta pantalla, JSF se encuentra el mismo período de sesiones "helloBean" de nuevo y mostrar el valor de la propiedad
 de identificación mediante el método getName().
 
-Por ultimo
-
-Definir un mapeo "javax.faces.webapp.FacesServlet", y asignar a esas extensiones de archivo JSF conocidos (/faces /*, *.jsf, *.xhtml, *.faces).
+Por ultimo para definir un mapeo "javax.faces.webapp.FacesServlet", y asignar a esas extensiones de archivo JSF conocidos (/faces /*, *.jsf, *.xhtml, *.faces).
 
 En este caso, los siguientes 4 URLs apuntan a la misma hello.xhtml.
 
