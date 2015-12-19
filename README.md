@@ -50,6 +50,59 @@ Para la implementación, simplemente cambiarlo a "Producción", que simplemente no
 
 En JSF 2.0, la codificación Ajax es igual que la codificación de una etiqueta HTML normales, es muy fácil. 
 Reestructurar el último ejemplo hola mundo JSF 2.0, de modo que, cuando se pulsa el botón, se hará una petición Ajax en lugar de presentar todo el formulario.
+
 1. JSF 2.0 página 2.0 xhtml Página A JSF con soporte Ajax.
 
+helloAjax.xhtml
+
+```xhtml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+	
+    <h:body>
+    	<div><div class="ads-in-post hide_if_width_less_800">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90 - After1stH4 -->
+<ins class="adsbygoogle hide_if_width_less_800" 
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-2836379775501347"
+     data-ad-slot="7391621200"
+     data-ad-region="mkyongregion"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div><h2>JSF 2.0 + Ajax Hello World Example</h2>
+    	
+    	<h:form>
+    	   <h:inputText id="name" value="#{helloBean.name}"></h:inputText>
+    	   <h:commandButton value="Welcome Me">
+    		 <f:ajax execute="name" render="output" />
+    	   </h:commandButton>
+    		
+    	   <div><div class="ads-in-post hide_if_width_less_800">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90 - After2ndH4 -->
+<ins class="adsbygoogle hide_if_width_less_800" 
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-2836379775501347"
+     data-ad-slot="3642936086"
+	 data-ad-region="mkyongregion"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div><h2><h:outputText id="output" value="#{helloBean.sayWelcome}" /></h2>	
+    	</h:form>
+
+    </h:body>
+</html>
 ```
+
+
+Al hacer que el botón _ajaxable_ se hará una petición Ajax al servidor en lugar de presentar todo el formulario.
+
+En la  etiqueta <f: ajax>: ejecutar = "nombre" - Indique el componente de formulario con un ID de "nombre" se enviará al servidor para su procesamiento. Para múltiples componentes, simplemente dividirlo con un espacio en el medio, por ejemplo, ejecutar = "nombre de otra Id otra Id". En este caso, se presentará el valor del cuadro de texto.
+render = "salida" - Después de la petición Ajax, que se actualizará el componente con un id de "salida". En este caso, después de que se terminó la petición Ajax, se actualizará la <h: outputText> componente.
