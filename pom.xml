@@ -12,12 +12,12 @@
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
-			<version>2.1.7</version>
+			<version>2.2.13</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
-			<version>2.1.7</version>
+			<version>2.2.13</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -57,6 +57,19 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.4.0.M0</version>
+				<configuration>
+					<httpConnector>
+						<port>9090</port>
+					</httpConnector>
+					<webApp>
+						<contextPath>/JavaServerFaces</contextPath>
+					</webApp>
 				</configuration>
 			</plugin>
 		</plugins>
